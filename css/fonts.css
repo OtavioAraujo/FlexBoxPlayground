@@ -7,3 +7,8 @@
     font-family: "LeagueSpartan-Bold";
     src: url("../fonts/LeagueSpartan-Bold.otf");
 }
+
+@font-face {
+    font-family: "Comfortaa-Regular";
+    src: url("../fonts/Comfortaa-Regular.ttf");
+}
