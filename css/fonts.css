@@ -12,3 +12,13 @@
     font-family: "Comfortaa-Regular";
     src: url("../fonts/Comfortaa-Regular.ttf");
 }
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("../fonts/Poppins-Bold.otf");
+}
+
+@font-face {
+    font-family: "AnandaPersonal";
+    src: url("../fonts/AnandaPersonal.ttf");
+}

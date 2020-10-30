@@ -1,15 +1,12 @@
 
-/* ---------------------------------------------*\
-
+/*-------------------------------------------------------*\
 layout's
+\*-------------------------------------------------------*/
 
-\* ---------------------------------------------*/
 
-/* ---------------------------------------------*\
-
+/*-------------------------------------------------------*\
 playground-flex
-
-\* ---------------------------------------------*/
+\*-------------------------------------------------------*/
 
 .playground-flex {
 	height: 100vh;
@@ -27,7 +24,7 @@ playground-flex
 .playground-flex__separador {
 	width: 40px;
 	height: 3px;
-	background-color: #95ee7a;
+	background-color: #71c558;
 }
 
 .playground-flex h1 {
@@ -37,11 +34,18 @@ playground-flex
 	padding: 10px;
 }
 
-/* ---------------------------------------------*\
-
+/*-------------------------------------------------------*\
 controles-container
+\*-------------------------------------------------------*/
 
-\* ---------------------------------------------*/
+.controles-container__tabela thead {
+	line-height: 3;
+    border-bottom: 1px solid #ccc;
+}
+
+.controles-container__tabela tbody tr {
+	line-height: 2;
+}
 
 .controles-container__tabela th, .controles-container__tabela td {
 	text-align: center;
@@ -49,7 +53,7 @@ controles-container
 }
 
 .controles-container__tabela th {
-	font-family: "LeagueSpartan-Bold";
+    font-family: "Poppins-Bold";
 }
 
 .controles-container__tabela td {
@@ -57,11 +61,9 @@ controles-container
 }
 
 
-/* ---------------------------------------------*\
-
+/*-------------------------------------------------------*\
 container-flex
-
-\* ---------------------------------------------*/
+\*-------------------------------------------------------*/
 
 .layout-container {
 	height: 100vh;
@@ -76,11 +78,9 @@ container-flex
 	border: 1px solid #dedede;
 }
 
-/* ---------------------------------------------*\
-
-item	-flex
-
-\* ---------------------------------------------*/
+/*-------------------------------------------------------*\
+item-flex
+\*-------------------------------------------------------*/
 
 .item-flex {
 	display: inline-block;
@@ -88,5 +88,103 @@ item	-flex
 	background-color: #518842;
 }
 
+/*-------------------------------------------------------*\
+    formulario
+\*-------------------------------------------------------*/
+
+.formulario {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.formulario__InputGroup {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.formulario__label {
+    width: 100%;
+    display: inline-block;
+    font-family: "Poppins-Bold";
+}
+
+.formulario__input {
+    margin: 7px 0;
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-family: "Comfortaa-Regular";
+}
+
+.formulario__input:focus, .formulario__input:hover {
+    outline: none;
+    border: 1px solid #ff9800;
+    color: #FF9800;
+
+}
+
+.formulario__input:focus::placeholder, .formulario__input:hover::placeholder
+{
+    color: #FF9800;
+}
+
+.formulario_botoes {
+    margin: 50px 0px 50px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formulario_botao {
+    display: flex;
+    width: 35%;
+    margin: 0 20px 0 0;
+}
+
+.formulario_botao:last-child{
+    margin: 0;
+}
+
+.formulario__conjuto-input {
+    margin: 50px 0;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    text-align: center;
+    padding: 15px 25px;
+}
+
+.formulario__conjunto-legenda {
+	width: auto;
+    padding: 0 15px;
+    font-family: "AnandaPersonal";
+    font-size: 20px;
+}
+
+/*-------------------------------------------------------*\
+    botao
+\*-------------------------------------------------------*/
+
+.botao {
+    width: 100%;
+    border: none;
+    background: #ff9800;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 40px;
+    font-family: "AnandaPersonal";
+    border-radius: 7px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.botao:focus, .botao:hover {
+    outline: none;
+}
+
+.botao--remover {
+    background: none;
+    color: #ff310d;
+    box-shadow: none;
+    font-size: 25px;}
 
 

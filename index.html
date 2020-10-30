@@ -2,104 +2,122 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FlexBox Playground</title>
-	  <link rel="stylesheet" href="./css/bootstrap.min.css">
-	  <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/estilos-FlexBox.css">
+  <title>FlexBox Playground</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/estilos-FlexBox.css">
 </head>
-<body>   
+
+<body>
   <div class="layout-playground-flex">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-lg-6">
+      <div class="row">
+        <div class="col-12 col-lg-6">
 
-                <article class="playground-flex">
-                    
-                    <header class="playground-flex__cabecalho">
-                        <h1>FLEXBOX DISPLAY PLAYGROUND</h1>
-                        <div class="playground-flex__separador"></div>
-                    </header>
+          <article class="playground-flex">
 
-                    <div class="controles-container">
-                        <table class="controles-container__tabela table table-sm table-borderless">
-                            <thead>
-                              <tr>
-                                <th scope="col">flex-direction</th>
-                                <th scope="col">flex-wrap</th>
-                                <th scope="col">justify-content</th>
-                                <th scope="col">align-items</th>
-                                <th scope="col">align-content</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>row</td>
-                                <td>nowrap</td>
-                                <td>flex-start</td>
-                                <td>flex-start</td>
-                                <td>flex-start</td>
-                              </tr>
-                              <tr>
-                                <td>column</td>
-                                <td>wrap</td>
-                                <td>flex-end</td>
-                                <td>flex-end</td>
-                                <td>flex-end</td>
-                              </tr>
-                              <tr>
-                                <td>row-reverse</td>
-                                <td>wrap-reverse</td>
-                                <td>center</td>
-                                <td>center</td>
-                                <td>center</td>
-                              </tr>
-                              <tr>
-                                <td>column-reverse</td>
-                                <td></td>
-                                <td>space-between</td>
-                                <td>baseline</td>
-                                <td>space-between</td>
-                              </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>space-around</td>
-                                <td>stretch</td>
-                                <td>space-around</td>
-                              </tr>
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>stretch</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                    <div class="controles-itens">
+            <header class="playground-flex__cabecalho">
+              <h1>FLEXBOX DISPLAY PLAYGROUND</h1>
+              <div class="playground-flex__separador"></div>
+            </header>
 
-                    </div>
 
-                </article>
+
+            <div class="formulario">
+
+              <form>
+                <fieldset class="formulario__conjuto-input">
+                  <legend class="formulario__conjunto-legenda">Container</legend>
+
+                  <div class="controles-container">
+                    <table class="controles-container__tabela table table-sm table-borderless">
+                      <thead >
+                        <tr>
+                          <th scope="col">flex-direction</th>
+                          <th scope="col">flex-wrap</th>
+                          <th scope="col">justify-content</th>
+                          <th scope="col">align-items</th>
+                          <th scope="col">align-content</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>row</td>
+                          <td>nowrap</td>
+                          <td>flex-start</td>
+                          <td>flex-start</td>
+                          <td>flex-start</td>
+                        </tr>
+                        <tr>
+                          <td>column</td>
+                          <td>wrap</td>
+                          <td>flex-end</td>
+                          <td>flex-end</td>
+                          <td>flex-end</td>
+                        </tr>
+                        <tr>
+                          <td>row-reverse</td>
+                          <td>wrap-reverse</td>
+                          <td>center</td>
+                          <td>center</td>
+                          <td>center</td>
+                        </tr>
+                        <tr>
+                          <td>column-reverse</td>
+                          <td></td>
+                          <td>space-between</td>
+                          <td>baseline</td>
+                          <td>space-between</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>space-around</td>
+                          <td>stretch</td>
+                          <td>space-around</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>stretch</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+
+
+
+                </fieldset>
+              </form>
+            </div>
+
+            <div class="controles-itens">
 
             </div>
-            <div class="col-12 col-lg-6">
-                
-                <article class="layout-container">
-                    <div class="container-flex">
-                        <div class="item-flex" style="opacity: 30%;">1</div>
-                        <div class="item-flex" style="opacity: 60%;">2</div>
-                        <div class="item-flex" style="opacity: 90%;">3</div>
-                    </div>
-                </article>
 
-            </div>
+          </article>
+
         </div>
+        <div class="col-12 col-lg-6">
+
+          <article class="layout-container">
+            <div class="container-flex">
+              <div class="item-flex" style="opacity: 30%;">1</div>
+              <div class="item-flex" style="opacity: 60%;">2</div>
+              <div class="item-flex" style="opacity: 90%;">3</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </body>
+
 </html>
