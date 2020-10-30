@@ -43,10 +43,6 @@ controles-container
 
 \* ---------------------------------------------*/
 
-.controles-container__tabela {
-	border: 1px solid #dee2e6;
-}
-
 .controles-container__tabela th, .controles-container__tabela td {
 	text-align: center;
 	font-size: 13px;
@@ -74,6 +70,7 @@ container-flex
 }
 
 .container-flex {
+	display: flex;
 	width: 100%;
 	height: 100%;
 	border: 1px solid #dedede;
