@@ -91,7 +91,9 @@ controles-container
 	display: flex;
 	width: 100%;
 	height: 100%;
-	border: 1px solid #dedede;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	background: linear-gradient(324deg, #f1f1f1, #fbfbfb, #f1f1f1);
 }
 
 /*-------------------------------------------------------*\
@@ -101,7 +103,11 @@ item-flex
 .item-flex {
 	display: inline-block;
 	padding: 50px;
-	background-color: #518842;
+	background-color: #61a34f;
+    color: #fff;
+    font-size: 30px;
+	font-weight: 700;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 36px, rgba(255,255,255,0.5) 35px, rgba(255,255,255,-16.5) 37px);
 }
 
 /*-------------------------------------------------------*\
