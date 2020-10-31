@@ -43,9 +43,6 @@ controles-container
     border-bottom: 1px solid #ccc;
 }
 
-.controles-container__tabela tbody tr {
-	line-height: 2;
-}
 
 .controles-container__tabela th, .controles-container__tabela td {
 	text-align: center;
@@ -57,12 +54,31 @@ controles-container
 }
 
 .controles-container__tabela td {
+	line-height: 1;
 	font-family: "Comfortaa-Regular";
+	height: 30px;		
+	vertical-align: middle;
+}
+.controles-container__tabela tr:first-child td{
+    padding-top: 20px;
+}
+	
+.controles-container__tabela td button 	{
+	border: none;
+	background: none;
+}
+
+.controles-container__tabela td button:active, .controles-container__tabela td button:focus	{
+	outline: none;	
+}
+.controles-container__tabela td button:hover, .flex-default {
+	color: #71c558;
+	font-weight: 700;
 }
 
 
 /*-------------------------------------------------------*\
-container-flex
+	container-flex
 \*-------------------------------------------------------*/
 
 .layout-container {
@@ -186,5 +202,4 @@ item-flex
     color: #ff310d;
     box-shadow: none;
     font-size: 25px;}
-
 

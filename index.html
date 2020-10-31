@@ -28,7 +28,7 @@
 
             <div class="formulario">
 
-              <form>
+              <div>
                 <fieldset class="formulario__conjuto-input">
                   <legend class="formulario__conjunto-legenda">Container</legend>
 
@@ -45,46 +45,47 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>row</td>
-                          <td>nowrap</td>
-                          <td>flex-start</td>
-                          <td>flex-start</td>
-                          <td>flex-start</td>
+                          <td><button class="flex-direction flex-default" onclick="btnFlexDirection(this)" >row (default)</button></td>
+                          <td><button class="flex-wrap flex-default" onclick="btnFlexWrap(this)">nowrap (default)</button></td>
+                          <td><button class="justify-content flex-default" onclick="btnJustifyContent(this)">flex-start (default)</button></td>
+                          <td><button class="align-items flex-default" onclick="btnAlignItems(this)">stretch (default)</button></td>
+                          <td><button class="align-content flex-default" onclick="btnAlignContent(this)">stretch (default)</button></td>
+
                         </tr>
                         <tr>
-                          <td>column</td>
-                          <td>wrap</td>
-                          <td>flex-end</td>
-                          <td>flex-end</td>
-                          <td>flex-end</td>
+                          <td><button class="flex-direction" onclick="btnFlexDirection(this)">column</button></td>
+                          <td><button class="flex-wrap" onclick="btnFlexWrap(this)">wrap</button></td>
+                          <td><button class="justify-content" onclick="btnJustifyContent(this)">flex-end</button></td>
+                          <td><button class="align-items" onclick="btnAlignItems(this)">flex-start</button></td>
+                          <td><button class="align-content" onclick="btnAlignContent(this)">flex-start</button></td>
                         </tr>
                         <tr>
-                          <td>row-reverse</td>
-                          <td>wrap-reverse</td>
-                          <td>center</td>
-                          <td>center</td>
-                          <td>center</td>
+                          <td><button class="flex-direction" onclick="btnFlexDirection(this)">row-reverse</button></td>
+                          <td><button class="flex-wrap" onclick="btnFlexWrap(this)">wrap-reverse</button></td>
+                          <td><button class="justify-content" onclick="btnJustifyContent(this)">center</button></td>
+                          <td><button class="align-items" onclick="btnAlignItems(this)">flex-end</button></td>
+                          <td><button class="align-content" onclick="btnAlignContent(this)">flex-end</button></td>
                         </tr>
                         <tr>
-                          <td>column-reverse</td>
+                          <td><button class="flex-direction" onclick="btnFlexDirection(this)">column-reverse</button></td>
                           <td></td>
-                          <td>space-between</td>
-                          <td>baseline</td>
-                          <td>space-between</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td>space-around</td>
-                          <td>stretch</td>
-                          <td>space-around</td>
+                          <td><button class="justify-content" onclick="btnJustifyContent(this)">space-between</button></td>
+                          <td><button class="align-items" onclick="btnAlignItems(this)">center</button></td>
+                          <td><button class="align-content" onclick="btnAlignContent(this)">center</button></td>
                         </tr>
                         <tr>
                           <td></td>
                           <td></td>
+                          <td><button class="justify-content" onclick="btnJustifyContent(this)">space-around</button></td>
+                          <td><button class="align-items" onclick="btnAlignItems(this)">baseline</button></td>
+                          <td><button class="align-content" onclick="btnAlignContent(this)">space-between</button></td>
+                        </tr>
+                        <tr>
                           <td></td>
                           <td></td>
-                          <td>stretch</td>
+                          <td></td>
+                          <td></td>
+                          <td><button class="align-content" onclick="btnAlignContent(this)">space-around</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -94,7 +95,7 @@
 
 
                 </fieldset>
-              </form>
+              </div>
             </div>
 
             <div class="controles-itens">
@@ -107,7 +108,7 @@
         <div class="col-12 col-lg-6">
 
           <article class="layout-container">
-            <div class="container-flex">
+            <div id="container-flex" class="container-flex">
               <div class="item-flex" style="opacity: 30%;">1</div>
               <div class="item-flex" style="opacity: 60%;">2</div>
               <div class="item-flex" style="opacity: 90%;">3</div>
@@ -118,6 +119,9 @@
       </div>
     </div>
   </div>
+
+  <script src="./js/FlexBoxPlayground.js" type="text/javascript"></script> 
+
 </body>
 
 </html>
