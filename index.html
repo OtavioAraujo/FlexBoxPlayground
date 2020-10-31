@@ -108,112 +108,103 @@
 
 
                     <div class="nav flex-column nav-pills controles-itens__abas">
-                      <a class="nav-link active" id="formulario-aba-item-1" data-toggle="pill"
-                        href="#formulario-item-1">1</a>
-                      <a class="nav-link" id="formulario-aba-item-2" data-toggle="pill" href="#formulario-item-2">2</a>
-                      <a class="nav-link" id="formulario-aba-item-3" data-toggle="pill" href="#formulario-item-3">3</a>
                     </div>
 
 
                     <div class="tab-content controles-itens__conteudo">
-                      <div class="tab-pane fade show active" id="formulario-item-1">
 
-                        <div class="formulario__InputGroup">
+                      <div class="formulario__InputGroup">
 
-                          <div class="row">
-                            <div class="col-4">
-
-                              <div class="formulario__InputGroup">
-                                <label class="formulario__label" for="flex-grow">flex-grow</label>
-                                <input class="formulario__input" type="number" name="flex-grow" placeholder="0"
-                                  autofocus required maxlength="120">
-                              </div>
-
-                            </div>
-                            <div class="col-4">
-
-                              <div class="formulario__InputGroup">
-                                <label class="formulario__label" for="flex-shrink">flex-shrink</label>
-                                <input class="formulario__input" type="number" name="flex-shrink" placeholder="1"
-                                  autofocus required maxlength="120">
-                              </div>
-
-                            </div>
-                            <div class="col-4">
-
-                              <div class="formulario__InputGroup">
-                                <label class="formulario__label" for="flex-basis">flex-basis</label>
-                                <input class="formulario__input" type="text" name="flex-basis" placeholder="auto"
-                                  autofocus required maxlength="120">
-                              </div>
-
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-12">
-                              <code>flex:	0 1 auto</code>
-                            </div>
-                          </div>
-                        </div>
-                        
                         <div class="row">
-                          <div class="col-6">
+                          <div class="col-4">
 
                             <div class="formulario__InputGroup">
-                              <label class="formulario__label" for="conteudo">Conteúdo</label>
-                              <textarea class="formulario__input" name="conteudo" rows="5" cols="33"
-                                placeholder="Conteúdo...."></textarea>
+                              <label class="formulario__label" for="flex-grow">flex-grow</label>
+                              <input id="campo-flex-grow" class="formulario__input" type="number" name="flex-grow" placeholder="0"
+                                autofocus required maxlength="120">
                             </div>
 
                           </div>
-                          <div class="col-6">
-                            <div class="row">
-                              <div class="col-6">
+                          <div class="col-4">
 
-                                <div class="formulario__InputGroup">
-                                  <label class="formulario__label" for="width">width</label>
-                                  <input class="formulario__input" type="number" name="width" autofocus required
-                                    maxlength="120">
-                                </div>
-
-                              </div>
-                              <div class="col-6">
-
-                                <div class="formulario__InputGroup">
-                                  <label class="formulario__label" for="height">height</label>
-                                  <input class="formulario__input" type="number" name="height" autofocus required
-                                    maxlength="120">
-                                </div>
-
-                              </div>
-                              <div class="col-12">
-
-                                <div class="formulario__InputGroup">
-                                  <label class="formulario__label" for="padding">padding</label>
-                                  <input class="formulario__input" type="text" name="padding" autofocus required
-                                    maxlength="120">
-                                </div>
-
-                              </div>
-
-                              <div class="col-12">
-
-                                <div class="formulario__InputGroup">
-                                  <label class="formulario__label" for="margin">margin</label>
-                                  <input class="formulario__input" type="text" name="margin" autofocus required
-                                    maxlength="120">
-                                </div>
-
-                              </div>
+                            <div class="formulario__InputGroup">
+                              <label class="formulario__label" for="flex-shrink">flex-shrink</label>
+                              <input id="campo-flex-shrink" class="formulario__input" type="number" name="flex-shrink" placeholder="1"
+                                autofocus required maxlength="120">
                             </div>
+
+                          </div>
+                          <div class="col-4">
+
+                            <div class="formulario__InputGroup">
+                              <label class="formulario__label" for="flex-basis">flex-basis</label>
+                              <input id="campo-flex-basis" class="formulario__input" type="text" name="flex-basis" placeholder="auto"
+                                autofocus required maxlength="120">
+                            </div>
+
                           </div>
                         </div>
 
-
+                        <div class="row">
+                          <div class="col-12">
+                            <code>flex:	<span id="code-flex-grow">0</span> <span id="code-flex-shrink">0</span> <span id="code-flex-basis">0</span>  </code>
+                          </div>
+                        </div>
                       </div>
-                      <div class="tab-pane fade" id="formulario-item-2">...2</div>
-                      <div class="tab-pane fade" id="formulario-item-3">...3</div>
+                      
+                      <div class="row">
+                        <div class="col-6">
+
+                          <div class="formulario__InputGroup">
+                            <label class="formulario__label" for="conteudo">Conteúdo</label>
+                            <textarea id="campo-conteudo" class="formulario__input" name="conteudo" rows="5" cols="33"
+                              placeholder="Conteúdo...."></textarea>
+                          </div>
+
+                        </div>
+                        <div class="col-6">
+                          <div class="row">
+                            <div class="col-6">
+
+                              <div class="formulario__InputGroup">
+                                <label class="formulario__label" for="width">width</label>
+                                <input id="campo-width" class="formulario__input" type="text" name="width" autofocus required
+                                  maxlength="120">
+                              </div>
+
+                            </div>
+                            <div class="col-6">
+
+                              <div class="formulario__InputGroup">
+                                <label class="formulario__label" for="height">height</label>
+                                <input id="campo-height" class="formulario__input" type="text" name="height" autofocus required
+                                  maxlength="120">
+                              </div>
+
+                            </div>
+                            <div class="col-12">
+
+                              <div class="formulario__InputGroup">
+                                <label class="formulario__label" for="padding">padding</label>
+                                <input id="campo-padding" class="formulario__input" type="text" name="padding" autofocus required
+                                  maxlength="120">
+                              </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                              <div class="formulario__InputGroup">
+                                <label class="formulario__label" for="margin">margin</label>
+                                <input id="campo-margin" class="formulario__input" type="text" name="margin" autofocus required
+                                  maxlength="120">
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
 
                   </div>
@@ -233,9 +224,6 @@
 
           <article class="layout-container">
             <div id="container-flex" class="container-flex">
-              <div class="item-flex" style="opacity: 50%;">1</div>
-              <div class="item-flex" style="opacity: 70%;">2</div>
-              <div class="item-flex" style="opacity: 90%;">3</div>
             </div>
           </article>
 

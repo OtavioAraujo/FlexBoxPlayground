@@ -1,11 +1,22 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /*-------------------------------------------------------*\
-layout's
+    layout's
 \*-------------------------------------------------------*/
 
 
 /*-------------------------------------------------------*\
-playground-flex
+    playground-flex
 \*-------------------------------------------------------*/
 
 .playground-flex {
@@ -98,20 +109,25 @@ controles-container
     margin: 10px 0 25px 0;
 }
 
-.controles-itens__abas a[id^="formulario-aba-item-"] {
-    padding: 3px 0;
+.controles-itens__abas button {
     margin: 7px 0;
     color: #000;
     font-weight: 700;
     font-family: "Poppins-Bold";
     padding: 3px 12px;
+    border: none;
+    background: transparent;
 }
 
-.controles-itens__abas a[id^="formulario-aba-item-"].active {
-    background-color: transparent;
-    color: #71c558;
+.controles-itens__abas button.active  {
+    background-color: transparent !important;
+    color: #71c558  !important;
     border: 2px solid #71c558;
     border-radius: 0;
+}
+
+.controles-itens__abas button:focus, .controles-itens__abas button:active  {
+    outline: none;
 }
 
 .controles-itens__conteudo {

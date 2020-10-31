@@ -1,4 +1,85 @@
-var containerFlex = document.getElementById("container-flex")
+$( document ).ready(function() {
+    addItemFlex();
+    addItemFlex();
+    addItemFlex();
+    controlesItensAbas.find("button:first-child").addClass( "active" );
+    preencherCampos(indexAtual);
+});
+
+/*-------------------------------------------------------*\
+    variaveis
+\*-------------------------------------------------------*/
+
+var indexUltimo = -1;
+var indexAtual = 0;
+
+/*-------------------------------------------------------*\
+    elementos
+\*-------------------------------------------------------*/
+
+var controlesItensAbas = $(".controles-itens__abas")
+var containerFlex = document.getElementById("container-flex");
+var itensFlex = [];
+
+//code
+var codeFlexGrow = $("#code-flex-grow");
+var codeFlexShrink = $("#code-flex-shrink");
+var codeFlexBasis = $("#code-flex-basis");
+
+//Campos do item
+var campoFlexGrow = $( "#campo-flex-grow" );
+var campoFlexShrink = $( "#campo-flex-shrink" );
+var campoFlexBasis = $( "#campo-flex-basis" );
+var campoConteudo = $( "#campo-conteudo" );
+var campoWidth = $( "#campo-width" );
+var campoHeight = $( "#campo-height" );
+var campoPadding = $( "#campo-padding" );
+var campoMargin = $( "#campo-margin" );
+
+/*-------------------------------------------------------*\ 
+    Eventos
+\*-------------------------------------------------------*/
+
+campoFlexGrow.keyup((e) => {    
+    itensFlex[indexAtual].css("flex-grow", campoFlexGrow.val());
+    codeFlexGrow.html(campoFlexGrow.val());
+});
+
+campoFlexShrink.keyup((e) => {    
+    itensFlex[indexAtual].css("flex-shrink", campoFlexShrink.val());
+    codeFlexShrink.html(campoFlexShrink.val());
+});
+
+campoFlexBasis.keyup((e) => {    
+    itensFlex[indexAtual].css("flex-basis", campoFlexBasis.val());
+    codeFlexBasis.html(campoFlexBasis.val());
+});
+
+campoConteudo.keyup((e) => {    
+    itensFlex[indexAtual].html(campoConteudo.val());
+});
+
+campoWidth.keyup((e) => {    
+    itensFlex[indexAtual].css("width", campoWidth.val());
+});
+
+campoHeight.keyup((e) => {    
+    itensFlex[indexAtual].css("height", campoHeight.val());
+});
+
+campoPadding.keyup((e) => {    
+    itensFlex[indexAtual].css("padding", campoPadding.val());
+});
+
+campoMargin.keyup((e) => {    
+    itensFlex[indexAtual].css("margin", campoMargin.val());
+});
+
+
+
+/*-------------------------------------------------------*\
+    botoes
+\*-------------------------------------------------------*/
 
 function btnFlexDirection(botao) {      
     for (let e of document.getElementsByClassName("flex-direction")) {
@@ -59,4 +140,68 @@ function btnAlignContent(botao) {
 
     containerFlex.style.alignContent = botao.textContent.replace(" (default)", "");
 };
+
+/*-------------------------------------------------------*\
+    Métodos
+\*-------------------------------------------------------*/
+
+function addItemFlex() {
+    var opacidade = indexUltimo !== -1? parseInt(itensFlex[indexUltimo].css("opacity")*100, 10) : 50;
+    
+    indexUltimo++;
+
+    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
+    itensFlex.push($(`<div class="item-flex" id-flex="${indexUltimo}" style="opacity: ${opacidade+10}%">${indexUltimo+1}</div>`).appendTo(containerFlex));
+}
+
+function trocarFormularioItem(indexSelecionado) {
+    indexAtual = indexSelecionado;
+    limparCampos();
+    preencherCampos(indexSelecionado);
+}
+
+function limparCampos(){
+    campoFlexGrow.val(null);
+    campoFlexShrink.val(null);
+    campoFlexBasis.val(null);
+    campoConteudo.val("");
+    campoWidth.val("");
+    campoHeight.val("");
+    campoPadding.val("");
+    campoMargin.val("");
+}
+
+function preencherCampos(indexSelecionado){
+    campoFlexGrow.val(itensFlex[indexSelecionado].css("flex-grow"));
+    campoFlexShrink.val(itensFlex[indexSelecionado].css("flex-shrink"));
+    campoFlexBasis.val(itensFlex[indexSelecionado].css("flex-basis"));
+    campoConteudo.val(itensFlex[indexSelecionado].html());
+
+    var possuiWidth = false;
+    var possuiHeight = false;
+
+    for(let e of itensFlex[indexSelecionado][0].style) {
+        if(e == "width") {
+            possuiWidth = true;
+        }
+        if(e == "height") {
+            possuiHeight = true;
+        }        
+    }
+
+    if (possuiWidth){
+        campoWidth.val(itensFlex[indexSelecionado].css("width"));
+    }
+
+    if (possuiHeight){
+        campoHeight.val(itensFlex[indexSelecionado].css("height"));
+    }
+    
+    campoPadding.val(itensFlex[indexSelecionado].css("padding"));
+    campoMargin.val(itensFlex[indexSelecionado].css("margin"));
+
+    codeFlexGrow.html(campoFlexGrow.val());
+    codeFlexShrink.html(campoFlexShrink.val());
+    codeFlexBasis.html(campoFlexBasis.val());
+}
 
