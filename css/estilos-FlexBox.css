@@ -111,6 +111,7 @@ controles-container
     background-color: transparent;
     color: #71c558;
     border: 2px solid #71c558;
+    border-radius: 0;
 }
 
 .controles-itens__conteudo {
@@ -125,7 +126,9 @@ controles-container
 .layout-container {
 	height: 100vh;
 	box-sizing: border-box;
-	padding: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .container-flex {
@@ -134,7 +137,8 @@ controles-container
 	height: 100%;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
-	background: linear-gradient(324deg, #f1f1f1, #fbfbfb, #f1f1f1);
+    background: linear-gradient(324deg, #f1f1f1, #fbfbfb, #f1f1f1);
+    animation: grow 5s infinite;
 }
 
 /*-------------------------------------------------------*\
@@ -270,4 +274,21 @@ code {
     margin-bottom: 30px;
     color: #71c558;
     text-align: center; 
+}
+
+
+/*-------------------------------------------------------*\
+    grow
+\*-------------------------------------------------------*/
+
+@keyframes grow {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 30%;
+    }
+    100% {
+        width: 100%;
+    }
 }
