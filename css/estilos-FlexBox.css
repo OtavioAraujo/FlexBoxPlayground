@@ -24,14 +24,24 @@ playground-flex
 .playground-flex__separador {
 	width: 40px;
 	height: 3px;
-	background-color: #71c558;
+	background-color: #e2e2e2;
 }
 
 .playground-flex h1 {
+	display: flex;
+	flex-direction: column;
 	font-size: 16px;
 	font-family: "LeagueSpartan-Bold";
 	letter-spacing: 3px;
-	padding: 10px;
+	padding: 10px 0 20px 0;
+}
+
+.playground-flex h1 span {
+	font-family: "LeagueSpartan-Bold";
+    margin: 15px auto;
+    font-size: 14px;
+    border: 2px solid #71c558;
+    padding: 5px 5px 1px 5px;
 }
 
 /*-------------------------------------------------------*\
