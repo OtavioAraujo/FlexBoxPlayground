@@ -49,7 +49,8 @@ controles-container
 \*-------------------------------------------------------*/
 
 .controles-container__tabela thead {
-	line-height: 3;
+	line-height: 1.5;
+	height: 30px;		
     border-bottom: 1px solid #ccc;
 }
 
@@ -61,10 +62,11 @@ controles-container
 
 .controles-container__tabela th {
     font-family: "Poppins-Bold";
+    padding-bottom: 10px;
 }
 
 .controles-container__tabela td {
-	line-height: 1;
+	line-height: 1.5;
 	font-family: "Comfortaa-Regular";
 	height: 30px;		
 	vertical-align: middle;
@@ -86,6 +88,35 @@ controles-container
 	font-weight: 700;
 }
 
+/*-------------------------------------------------------*\
+    controles-itens
+\*-------------------------------------------------------*/
+
+.controles-itens__abas {
+    flex-direction: row !important;
+    justify-content: center;
+    margin: 10px 0 25px 0;
+}
+
+.controles-itens__abas a[id^="formulario-aba-item-"] {
+    padding: 3px 0;
+    margin: 7px 0;
+    color: #000;
+    font-weight: 700;
+    font-family: "Poppins-Bold";
+    padding: 3px 12px;
+}
+
+.controles-itens__abas a[id^="formulario-aba-item-"].active {
+    background-color: transparent;
+    color: #71c558;
+    border: 2px solid #71c558;
+}
+
+.controles-itens__conteudo {
+    padding: 30px;
+}
+    
 
 /*-------------------------------------------------------*\
 	container-flex
@@ -130,7 +161,7 @@ item-flex
 }
 
 .formulario__InputGroup {
-    margin: 30px 0;
+    margin: 0 0 30px 0;
     text-align: left;
 }
 
@@ -138,28 +169,33 @@ item-flex
     width: 100%;
     display: inline-block;
     font-family: "Poppins-Bold";
+    font-size: 14px;
 }
 
 .formulario__input {
-    margin: 7px 0;
     display: inline-block;
     width: 100%;
     padding: 7px;
     border-radius: 7px;
     border: 1px solid #ccc;
     font-family: "Comfortaa-Regular";
+    font-size: 12px;
+}
+
+textarea.formulario__input {
+    min-height: 225px;
 }
 
 .formulario__input:focus, .formulario__input:hover {
     outline: none;
-    border: 1px solid #ff9800;
-    color: #FF9800;
+    border: 1px solid #71c558;
+    color: #71c558;
 
 }
 
 .formulario__input:focus::placeholder, .formulario__input:hover::placeholder
 {
-    color: #FF9800;
+    color: #71c558;
 }
 
 .formulario_botoes {
@@ -185,6 +221,7 @@ item-flex
     text-align: center;
     padding: 15px 25px;
 }
+
 
 .formulario__conjunto-legenda {
 	width: auto;
@@ -219,3 +256,18 @@ item-flex
     box-shadow: none;
     font-size: 25px;}
 
+
+/*-------------------------------------------------------*\
+    code
+\*-------------------------------------------------------*/
+
+code {
+    display: inline-block;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    color: #71c558;
+    text-align: center; 
+}
