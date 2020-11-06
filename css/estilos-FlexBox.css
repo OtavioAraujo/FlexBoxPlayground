@@ -10,6 +10,29 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f9f9f9; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a2ce94; 
+    border-radius:5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #71c558; 
+  }
+
+  
+
 /*-------------------------------------------------------*\
     layout's
 \*-------------------------------------------------------*/
