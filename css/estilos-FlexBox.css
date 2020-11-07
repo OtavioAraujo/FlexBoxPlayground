@@ -31,7 +31,7 @@ input[type=number] {
     background: #71c558; 
   }
 
-  
+
 
 /*-------------------------------------------------------*\
     layout's
@@ -313,6 +313,7 @@ code {
     margin-bottom: 30px;
     color: #71c558;
     text-align: center; 
+    font-family: "Codec-Cold-News-trial";
 }
 
 

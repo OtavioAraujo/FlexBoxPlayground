@@ -26,6 +26,10 @@ var codeFlexGrow = $("#code-flex-grow");
 var codeFlexShrink = $("#code-flex-shrink");
 var codeFlexBasis = $("#code-flex-basis");
 
+var codeFlexDirection = $("#code-flex-direction");
+var codeFlexWrap = $("#code-flex-wrap");
+
+
 //Campos do item
 var campoFlexGrow = $( "#campo-flex-grow" );
 var campoFlexShrink = $( "#campo-flex-shrink" );
@@ -42,17 +46,17 @@ var campoMargin = $( "#campo-margin" );
 
 campoFlexGrow.keyup((e) => {    
     itensFlex[indexAtual].css("flex-grow", campoFlexGrow.val());
-    codeFlexGrow.html(campoFlexGrow.val());
+    codeFlexGrow.html(campoFlexGrow.val()?campoFlexGrow.val():0);
 });
 
 campoFlexShrink.keyup((e) => {    
     itensFlex[indexAtual].css("flex-shrink", campoFlexShrink.val());
-    codeFlexShrink.html(campoFlexShrink.val());
+    codeFlexShrink.html(campoFlexShrink.val()?campoFlexShrink.val():1);
 });
 
 campoFlexBasis.keyup((e) => {    
     itensFlex[indexAtual].css("flex-basis", campoFlexBasis.val());
-    codeFlexBasis.html(campoFlexBasis.val());
+    codeFlexBasis.html(campoFlexBasis.val()?campoFlexBasis.val():"auto");
 });
 
 campoConteudo.keyup((e) => {    
@@ -90,6 +94,8 @@ function btnFlexDirection(botao) {
     botao.style.color =  "#71c558";
     botao.style.fontWeight = "700";
 
+    codeFlexDirection.html( botao.textContent.replace(" (default)", ""))
+
     containerFlex.style.flexDirection = botao.textContent.replace(" (default)", "");
 };
 
@@ -101,6 +107,8 @@ function btnFlexWrap(botao) {
 
     botao.style.color =  "#71c558";
     botao.style.fontWeight = "700";
+
+    codeFlexWrap.html( botao.textContent.replace(" (default)", ""))
 
     containerFlex.style.flexWrap = botao.textContent.replace(" (default)", "");
 };
