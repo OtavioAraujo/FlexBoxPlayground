@@ -165,11 +165,14 @@ function addItemFlex() {
         `<div class="item-flex" 
               id-flex="${indexUltimo}" 
               style="opacity: ${opacidade+10}%; 
-              padding: ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px">
+              padding: ${Math.floor(Math.random() * 50)}px 
+              ${Math.floor(Math.random() * 50)}px 
+              ${Math.floor(Math.random() * 50)}px 
+              ${Math.floor(Math.random() * 50)}px">` + 
 
-            ${indexUltimo+1} - ${ipsum}
+            `${indexUltimo+1} - ${ipsum}` +
 
-        </div>`).appendTo(containerFlex));
+        `</div>`).appendTo(containerFlex));
     
 }
 
