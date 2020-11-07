@@ -1,7 +1,7 @@
-$( document ).ready(async function() {
-    await addItemFlex();
-    await addItemFlex();
-    await addItemFlex();
+$( document ).ready(function() {
+    addItemFlex();
+    addItemFlex();
+    addItemFlex();
     controlesItensAbas.find("button:first-child").addClass( "active" );
     preencherCampos(indexAtual);
 });
@@ -153,27 +153,24 @@ function btnAlignContent(botao) {
     Métodos
 \*-------------------------------------------------------*/
 
-async function addItemFlex() {
+function addItemFlex() {
     var opacidade = indexUltimo !== -1? parseInt(itensFlex[indexUltimo].css("opacity")*100, 10) : 50;
     
     indexUltimo++;
 
-    var ipsum;
+    var ipsum = oberLoremIpsum()
 
-    await oberLoremIpsum().then(retorno => {
-        ipsum = retorno.text;   
+    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
+    itensFlex.push($(
+        `<div class="item-flex" 
+              id-flex="${indexUltimo}" 
+              style="opacity: ${opacidade+10}%; 
+              padding: ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px">
 
-        $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
-        itensFlex.push($(
-            `<div class="item-flex" 
-                  id-flex="${indexUltimo}" 
-                  style="opacity: ${opacidade+10}%; 
-                  padding: ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px">
+            ${indexUltimo+1} - ${ipsum}
 
-                ${indexUltimo+1} - ${ipsum}
-
-            </div>`).appendTo(containerFlex));
-    })
+        </div>`).appendTo(containerFlex));
+    
 }
 
 function trocarFormularioItem(indexSelecionado) {
@@ -232,7 +229,19 @@ function preencherCampos(indexSelecionado){
 \*-------------------------------------------------------*/
 
 function oberLoremIpsum() {
-    var qtdPalavras = Math.floor(Math.random() * 4)
-    return $.get( "https://asdfast.beobit.net/api/", { type: "word", length: qtdPalavras > 1 ? qtdPalavras : 2 } );    
+    var textos = [
+        "Lorem Ipsum",
+        "is simply dummy",
+        "text of the printing and typesetting industry",
+        "Lorem Ipsum has",
+        "been the",
+        "industry's",
+        "standard dummy",
+        "text ever since",
+        "the 1500s",
+        "when an unknown"
+    ]
+    
+    return textos[Math.floor(Math.random() * 10)]
 }
  
