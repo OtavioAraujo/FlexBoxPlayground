@@ -233,6 +233,6 @@ function preencherCampos(indexSelecionado){
 
 function oberLoremIpsum() {
     var qtdPalavras = Math.floor(Math.random() * 4)
-    return $.get( "http://asdfast.beobit.net/api/", { type: "word", length: qtdPalavras > 1 ? qtdPalavras : 2 } );    
+    return $.get( "https://asdfast.beobit.net/api/", { type: "word", length: qtdPalavras > 1 ? qtdPalavras : 2 } );    
 }
  
