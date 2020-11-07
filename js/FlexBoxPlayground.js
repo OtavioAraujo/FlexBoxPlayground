@@ -232,7 +232,7 @@ function oberLoremIpsum() {
     var textos = [
         "Lorem Ipsum",
         "is simply dummy",
-        "text of the printing and typesetting industry",
+        "textoftheprintingandtypesettingindustry",
         "Lorem Ipsum has",
         "been the",
         "industry's",
