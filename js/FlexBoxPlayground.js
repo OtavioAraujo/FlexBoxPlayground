@@ -164,7 +164,15 @@ async function addItemFlex() {
         ipsum = retorno.text;   
 
         $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
-        itensFlex.push($(`<div class="item-flex" id-flex="${indexUltimo}" style="opacity: ${opacidade+10}%; padding: ${Math.floor(Math.random() * 10)}px ${Math.floor(Math.random() * 100)}px">${indexUltimo+1} - ${ipsum}</div>`).appendTo(containerFlex));
+        itensFlex.push($(
+            `<div class="item-flex" 
+                  id-flex="${indexUltimo}" 
+                  style="opacity: ${opacidade+10}%; 
+                  padding: ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px ${Math.floor(Math.random() * 50)}px">
+
+                ${indexUltimo+1} - ${ipsum}
+
+            </div>`).appendTo(containerFlex));
     })
 }
 
