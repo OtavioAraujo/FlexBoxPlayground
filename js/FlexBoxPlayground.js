@@ -1,7 +1,7 @@
-$( document ).ready(function() {
-    addItemFlex();
-    addItemFlex();
-    addItemFlex();
+$( document ).ready(async function() {
+    await addItemFlex();
+    await addItemFlex();
+    await addItemFlex();
     controlesItensAbas.find("button:first-child").addClass( "active" );
     preencherCampos(indexAtual);
 });
@@ -153,13 +153,19 @@ function btnAlignContent(botao) {
     Métodos
 \*-------------------------------------------------------*/
 
-function addItemFlex() {
+async function addItemFlex() {
     var opacidade = indexUltimo !== -1? parseInt(itensFlex[indexUltimo].css("opacity")*100, 10) : 50;
     
     indexUltimo++;
 
-    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
-    itensFlex.push($(`<div class="item-flex" id-flex="${indexUltimo}" style="opacity: ${opacidade+10}%">${indexUltimo+1}</div>`).appendTo(containerFlex));
+    var ipsum;
+
+    await oberLoremIpsum().then(retorno => {
+        ipsum = retorno.text;   
+
+        $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
+        itensFlex.push($(`<div class="item-flex" id-flex="${indexUltimo}" style="opacity: ${opacidade+10}%; padding: ${Math.floor(Math.random() * 10)}px ${Math.floor(Math.random() * 100)}px">${indexUltimo+1} - ${ipsum}</div>`).appendTo(containerFlex));
+    })
 }
 
 function trocarFormularioItem(indexSelecionado) {
@@ -213,3 +219,12 @@ function preencherCampos(indexSelecionado){
     codeFlexBasis.html(campoFlexBasis.val());
 }
 
+/*-------------------------------------------------------*\
+    Requisições
+\*-------------------------------------------------------*/
+
+function oberLoremIpsum() {
+    var qtdPalavras = Math.floor(Math.random() * 4)
+    return $.get( "http://asdfast.beobit.net/api/", { type: "word", length: qtdPalavras > 1 ? qtdPalavras : 2 } );    
+}
+ 
