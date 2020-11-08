@@ -2,7 +2,7 @@ $(document).ready(function () {
     addItemFlex();
     addItemFlex();
     addItemFlex();
-    controlesItensAbas.find("button:first-child").addClass("active");
+    trocarFormularioItem(0);
     preencherCampos(indexAtual);
 });
 
@@ -180,7 +180,8 @@ function addItemFlex() {
 
     var ipsum = oberLoremIpsum()
 
-    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo + 1}</button>`).appendTo(controlesItensAbas);
+    $(`<button id="botaoItem${indexUltimo}" class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo + 1}</button>`).appendTo(controlesItensAbas);
+
     itensFlex.push($(
         `<div class="item-flex" 
               id-flex="${indexUltimo}" 
@@ -194,10 +195,30 @@ function addItemFlex() {
 
         `</div>`).appendTo(containerFlex));
 
+    indexAtual = indexUltimo;
+    trocarFormularioItem(indexAtual)
+
+}
+
+function removeUltimoItemFlex() {
+
+    if (indexUltimo > -1) {
+        if (indexUltimo === indexAtual) {
+            trocarFormularioItem(indexUltimo-1)          
+        }
+
+        $(`#botaoItem${indexUltimo}`).remove();
+        $(`[id-flex="${indexUltimo}"]`).remove();
+
+        indexUltimo--;
+    }
+
 }
 
 function trocarFormularioItem(indexSelecionado) {
     indexAtual = indexSelecionado;
+    $(`[id^="botaoItem"]`).removeClass("active");
+    $(`#botaoItem${indexAtual}`).addClass("active");            
     limparCampos();
     preencherCampos(indexSelecionado);
 }
@@ -225,49 +246,52 @@ function limparCampos() {
 
 function preencherCampos(indexSelecionado) {
 
-    campoOrder.val(itensFlex[indexSelecionado].css("order"));
+    if (indexSelecionado > -1) {
 
-    for (let e of document.getElementsByClassName("align-self")) {
-        if (e.textContent.replace(" (default)", "") === itensFlex[indexSelecionado].css("align-self")) {
-            e.style.color = "#71c558";
-            e.style.fontWeight = "700";
-        } else {
-            e.style.color = "#212529";
-            e.style.fontWeight = "100";
+        campoOrder.val(itensFlex[indexSelecionado].css("order"));
+
+        for (let e of document.getElementsByClassName("align-self")) {
+            if (e.textContent.replace(" (default)", "") === itensFlex[indexSelecionado].css("align-self")) {
+                e.style.color = "#71c558";
+                e.style.fontWeight = "700";
+            } else {
+                e.style.color = "#212529";
+                e.style.fontWeight = "100";
+            }
+        }   
+
+        campoFlexGrow.val(itensFlex[indexSelecionado].css("flex-grow"));
+        campoFlexShrink.val(itensFlex[indexSelecionado].css("flex-shrink"));
+        campoFlexBasis.val(itensFlex[indexSelecionado].css("flex-basis"));
+        campoConteudo.val(itensFlex[indexSelecionado].html());
+
+        var possuiWidth = false;
+        var possuiHeight = false;
+
+        for (let e of itensFlex[indexSelecionado][0].style) {
+            if (e == "width") {
+                possuiWidth = true;
+            }
+            if (e == "height") {
+                possuiHeight = true;
+            }
         }
-    }   
 
-    campoFlexGrow.val(itensFlex[indexSelecionado].css("flex-grow"));
-    campoFlexShrink.val(itensFlex[indexSelecionado].css("flex-shrink"));
-    campoFlexBasis.val(itensFlex[indexSelecionado].css("flex-basis"));
-    campoConteudo.val(itensFlex[indexSelecionado].html());
-
-    var possuiWidth = false;
-    var possuiHeight = false;
-
-    for (let e of itensFlex[indexSelecionado][0].style) {
-        if (e == "width") {
-            possuiWidth = true;
+        if (possuiWidth) {
+            campoWidth.val(itensFlex[indexSelecionado].css("width"));
         }
-        if (e == "height") {
-            possuiHeight = true;
+
+        if (possuiHeight) {
+            campoHeight.val(itensFlex[indexSelecionado].css("height"));
         }
+
+        campoPadding.val(itensFlex[indexSelecionado].css("padding"));
+        campoMargin.val(itensFlex[indexSelecionado].css("margin"));
+
+        codeFlexGrow.html(campoFlexGrow.val());
+        codeFlexShrink.html(campoFlexShrink.val());
+        codeFlexBasis.html(campoFlexBasis.val());
     }
-
-    if (possuiWidth) {
-        campoWidth.val(itensFlex[indexSelecionado].css("width"));
-    }
-
-    if (possuiHeight) {
-        campoHeight.val(itensFlex[indexSelecionado].css("height"));
-    }
-
-    campoPadding.val(itensFlex[indexSelecionado].css("padding"));
-    campoMargin.val(itensFlex[indexSelecionado].css("margin"));
-
-    codeFlexGrow.html(campoFlexGrow.val());
-    codeFlexShrink.html(campoFlexShrink.val());
-    codeFlexBasis.html(campoFlexBasis.val());
 }
 
 /*-------------------------------------------------------*\
