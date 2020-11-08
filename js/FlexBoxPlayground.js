@@ -313,7 +313,8 @@ tippy('.option', {
         const id = reference.getAttribute('data-template');
         const template = document.getElementById(id);
         return template.innerHTML;
-    }
+    },
+    appendTo: () => document.body
 });
 
 /*-------------------------------------------------------*\
