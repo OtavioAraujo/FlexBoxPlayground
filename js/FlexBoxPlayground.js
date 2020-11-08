@@ -154,6 +154,21 @@ function btnAlignContent(botao) {
     containerFlex.style.alignContent = botao.textContent.replace(" (default)", "");
 };
 
+
+
+function btnAlignSelf(botao) {
+    for (let e of document.getElementsByClassName("align-self")) {
+        e.style.color = "#212529";
+        e.style.fontWeight = "100";
+    }
+
+    botao.style.color = "#71c558";
+    botao.style.fontWeight = "700";
+
+    itensFlex[indexAtual].css("align-self", botao.textContent.replace(" (default)", ""));
+};
+
+
 /*-------------------------------------------------------*\
     Métodos
 \*-------------------------------------------------------*/
@@ -246,7 +261,7 @@ tippy.setDefaultProps({
     maxWidth: 600
 });
 
-tippy('.containerOption', {
+tippy('.option', {
     content(reference) {
         const id = reference.getAttribute('data-template');
         const template = document.getElementById(id);

@@ -80,10 +80,10 @@ input[type=number] {
 
 
 /*-------------------------------------------------------*\
-    containerOption
+    option
 \*-------------------------------------------------------*/
 
-.containerOption {
+.option {
     cursor: help;
 }
 
@@ -204,6 +204,14 @@ item-flex
 }
 
 /*-------------------------------------------------------*\
+    sepadadorControles
+\*-------------------------------------------------------*/
+
+.sepadadorControles {
+    margin: 50px 0;
+}
+
+/*-------------------------------------------------------*\
     formulario
 \*-------------------------------------------------------*/
 
@@ -217,8 +225,11 @@ item-flex
     text-align: left;
 }
 
+.formulario__InputGroup--ultimo {
+    margin: 0;
+}
+
 .formulario__label {
-    width: 100%;
     display: inline-block;
     font-family: "Poppins-Bold";
     font-size: 14px;
@@ -313,11 +324,17 @@ textarea.formulario__input {
     code
 \*-------------------------------------------------------*/
 
+.codeContainer {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
 code {
     display: inline-block;
     background-color: #f7f7f7;
     width: 100%;
-    padding: 10px;
+    height: 34px;
+    padding: 7px;
     border-radius: 5px;
     margin-bottom: 30px;
     color: #71c558;
@@ -348,6 +365,7 @@ code {
 
 .tippy-box[data-theme~='tomato'] {
     padding: 5px;
+    width: max-content;
 }
 
 .tippy-box[data-theme~='tomato'] h5 {
@@ -399,5 +417,19 @@ code {
 }
 .tippy-box[data-theme~='tomato'] .optionTootip__conteudo img {
     filter: hue-rotate(57deg) saturate(0.7);
-    margin: 10px 70px;
+    margin: 10px;
+    max-height: 60vh;
+}
+
+
+/*-------------------------------------------------------*\
+    fieldsetPrimario
+\*-------------------------------------------------------*/
+
+.fieldsetPrimario {
+    margin: 0;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    text-align: center;
+    padding: 15px 25px;
 }
