@@ -78,8 +78,17 @@ input[type=number] {
     padding: 5px 4px 1px 5px;
 }
 
+
 /*-------------------------------------------------------*\
-controles-container
+    containerOption
+\*-------------------------------------------------------*/
+
+.containerOption {
+    cursor: help;
+}
+
+/*-------------------------------------------------------*\
+    controles-container
 \*-------------------------------------------------------*/
 
 .controles-container__tabela thead {
@@ -331,4 +340,64 @@ code {
     100% {
         width: 100%;
     }
+}
+
+/*-------------------------------------------------------*\
+    optionTootip__conteudo
+\*-------------------------------------------------------*/
+
+.tippy-box[data-theme~='tomato'] {
+    padding: 5px;
+}
+
+.tippy-box[data-theme~='tomato'] h5 {
+    color: rgb(218 255 207);
+    background-color: #71c558;
+    margin: 10px;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px #000;
+    font-family: "LeagueSpartan-Bold";
+    letter-spacing: 3px;
+    padding: 7px 15px 0 15px ;
+    font-size: 16px;
+}
+
+.tippy-box[data-theme~='tomato'] h6 {
+    color: #71c558;
+    margin: 10px 0;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px #000;
+    font-family: "LeagueSpartan-Bold";
+    letter-spacing: 3px;
+    padding: 7px 0 0 0 ;
+    font-size: 14px;
+    text-align: left;
+}
+
+.tippy-box[data-theme~='tomato'] hr {
+    background-color: #71c55860;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+}
+
+.tippy-box[data-theme~='tomato'] .optionTootip__conteudo {
+    padding: 15px;
+}
+
+.tippy-box[data-theme~='tomato'] .optionTootip__conteudo p {
+    text-align: left;
+    font-family: "Comfortaa-Regular";
+    line-height: 1.7;
+    font-size: 12px;
+}
+
+.tippy-box[data-theme~='tomato'] .optionTootip__conteudo p strong {
+    text-decoration: underline;
+    font-family: "Poppins-Bold";
+    letter-spacing: 2px;
+}
+.tippy-box[data-theme~='tomato'] .optionTootip__conteudo img {
+    filter: hue-rotate(57deg) saturate(0.7);
+    margin: 10px 70px;
 }

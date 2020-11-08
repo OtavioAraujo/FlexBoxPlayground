@@ -1,8 +1,8 @@
-$( document ).ready(function() {
+$(document).ready(function () {
     addItemFlex();
     addItemFlex();
     addItemFlex();
-    controlesItensAbas.find("button:first-child").addClass( "active" );
+    controlesItensAbas.find("button:first-child").addClass("active");
     preencherCampos(indexAtual);
 });
 
@@ -31,51 +31,51 @@ var codeFlexWrap = $("#code-flex-wrap");
 
 
 //Campos do item
-var campoFlexGrow = $( "#campo-flex-grow" );
-var campoFlexShrink = $( "#campo-flex-shrink" );
-var campoFlexBasis = $( "#campo-flex-basis" );
-var campoConteudo = $( "#campo-conteudo" );
-var campoWidth = $( "#campo-width" );
-var campoHeight = $( "#campo-height" );
-var campoPadding = $( "#campo-padding" );
-var campoMargin = $( "#campo-margin" );
+var campoFlexGrow = $("#campo-flex-grow");
+var campoFlexShrink = $("#campo-flex-shrink");
+var campoFlexBasis = $("#campo-flex-basis");
+var campoConteudo = $("#campo-conteudo");
+var campoWidth = $("#campo-width");
+var campoHeight = $("#campo-height");
+var campoPadding = $("#campo-padding");
+var campoMargin = $("#campo-margin");
 
 /*-------------------------------------------------------*\ 
     Eventos
 \*-------------------------------------------------------*/
 
-campoFlexGrow.keyup((e) => {    
+campoFlexGrow.keyup((e) => {
     itensFlex[indexAtual].css("flex-grow", campoFlexGrow.val());
-    codeFlexGrow.html(campoFlexGrow.val()?campoFlexGrow.val():0);
+    codeFlexGrow.html(campoFlexGrow.val() ? campoFlexGrow.val() : 0);
 });
 
-campoFlexShrink.keyup((e) => {    
+campoFlexShrink.keyup((e) => {
     itensFlex[indexAtual].css("flex-shrink", campoFlexShrink.val());
-    codeFlexShrink.html(campoFlexShrink.val()?campoFlexShrink.val():1);
+    codeFlexShrink.html(campoFlexShrink.val() ? campoFlexShrink.val() : 1);
 });
 
-campoFlexBasis.keyup((e) => {    
+campoFlexBasis.keyup((e) => {
     itensFlex[indexAtual].css("flex-basis", campoFlexBasis.val());
-    codeFlexBasis.html(campoFlexBasis.val()?campoFlexBasis.val():"auto");
+    codeFlexBasis.html(campoFlexBasis.val() ? campoFlexBasis.val() : "auto");
 });
 
-campoConteudo.keyup((e) => {    
+campoConteudo.keyup((e) => {
     itensFlex[indexAtual].html(campoConteudo.val());
 });
 
-campoWidth.keyup((e) => {    
+campoWidth.keyup((e) => {
     itensFlex[indexAtual].css("width", campoWidth.val());
 });
 
-campoHeight.keyup((e) => {    
+campoHeight.keyup((e) => {
     itensFlex[indexAtual].css("height", campoHeight.val());
 });
 
-campoPadding.keyup((e) => {    
+campoPadding.keyup((e) => {
     itensFlex[indexAtual].css("padding", campoPadding.val());
 });
 
-campoMargin.keyup((e) => {    
+campoMargin.keyup((e) => {
     itensFlex[indexAtual].css("margin", campoMargin.val());
 });
 
@@ -85,41 +85,41 @@ campoMargin.keyup((e) => {
     botoes
 \*-------------------------------------------------------*/
 
-function btnFlexDirection(botao) {      
+function btnFlexDirection(botao) {
     for (let e of document.getElementsByClassName("flex-direction")) {
-        e.style.color =  "#212529";
+        e.style.color = "#212529";
         e.style.fontWeight = "100";
     }
 
-    botao.style.color =  "#71c558";
+    botao.style.color = "#71c558";
     botao.style.fontWeight = "700";
 
-    codeFlexDirection.html( botao.textContent.replace(" (default)", ""))
+    codeFlexDirection.html(botao.textContent.replace(" (default)", ""))
 
     containerFlex.style.flexDirection = botao.textContent.replace(" (default)", "");
 };
 
 function btnFlexWrap(botao) {
     for (let e of document.getElementsByClassName("flex-wrap")) {
-        e.style.color =  "#212529";
+        e.style.color = "#212529";
         e.style.fontWeight = "100";
     }
 
-    botao.style.color =  "#71c558";
+    botao.style.color = "#71c558";
     botao.style.fontWeight = "700";
 
-    codeFlexWrap.html( botao.textContent.replace(" (default)", ""))
+    codeFlexWrap.html(botao.textContent.replace(" (default)", ""))
 
     containerFlex.style.flexWrap = botao.textContent.replace(" (default)", "");
 };
 
 function btnJustifyContent(botao) {
     for (let e of document.getElementsByClassName("justify-content")) {
-        e.style.color =  "#212529";
+        e.style.color = "#212529";
         e.style.fontWeight = "100";
     }
 
-    botao.style.color =  "#71c558";
+    botao.style.color = "#71c558";
     botao.style.fontWeight = "700";
 
     containerFlex.style.justifyContent = botao.textContent.replace(" (default)", "");
@@ -127,11 +127,11 @@ function btnJustifyContent(botao) {
 
 function btnAlignItems(botao) {
     for (let e of document.getElementsByClassName("align-items")) {
-        e.style.color =  "#212529";
+        e.style.color = "#212529";
         e.style.fontWeight = "100";
     }
 
-    botao.style.color =  "#71c558";
+    botao.style.color = "#71c558";
     botao.style.fontWeight = "700";
 
     containerFlex.style.alignItems = botao.textContent.replace(" (default)", "");
@@ -139,11 +139,11 @@ function btnAlignItems(botao) {
 
 function btnAlignContent(botao) {
     for (let e of document.getElementsByClassName("align-content")) {
-        e.style.color =  "#212529";
+        e.style.color = "#212529";
         e.style.fontWeight = "100";
     }
 
-    botao.style.color =  "#71c558";
+    botao.style.color = "#71c558";
     botao.style.fontWeight = "700";
 
     containerFlex.style.alignContent = botao.textContent.replace(" (default)", "");
@@ -154,26 +154,26 @@ function btnAlignContent(botao) {
 \*-------------------------------------------------------*/
 
 function addItemFlex() {
-    var opacidade = indexUltimo !== -1? parseInt(itensFlex[indexUltimo].css("opacity")*100, 10) : 50;
-    
+    var opacidade = indexUltimo !== -1 ? parseInt(itensFlex[indexUltimo].css("opacity") * 100, 10) : 50;
+
     indexUltimo++;
 
     var ipsum = oberLoremIpsum()
 
-    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo+1}</button>`).appendTo(controlesItensAbas);
+    $(`<button class="nav-link" onclick="trocarFormularioItem(${indexUltimo})" data-toggle="pill">${indexUltimo + 1}</button>`).appendTo(controlesItensAbas);
     itensFlex.push($(
         `<div class="item-flex" 
               id-flex="${indexUltimo}" 
-              style="opacity: ${opacidade+10}%; 
+              style="opacity: ${opacidade + 10}%; 
               padding: ${Math.floor(Math.random() * 50)}px 
               ${Math.floor(Math.random() * 50)}px 
               ${Math.floor(Math.random() * 50)}px 
-              ${Math.floor(Math.random() * 50)}px">` + 
+              ${Math.floor(Math.random() * 50)}px">` +
 
-            `${indexUltimo+1} - ${ipsum}` +
+        `${indexUltimo + 1} - ${ipsum}` +
 
         `</div>`).appendTo(containerFlex));
-    
+
 }
 
 function trocarFormularioItem(indexSelecionado) {
@@ -182,7 +182,7 @@ function trocarFormularioItem(indexSelecionado) {
     preencherCampos(indexSelecionado);
 }
 
-function limparCampos(){
+function limparCampos() {
     campoFlexGrow.val(null);
     campoFlexShrink.val(null);
     campoFlexBasis.val(null);
@@ -193,7 +193,7 @@ function limparCampos(){
     campoMargin.val("");
 }
 
-function preencherCampos(indexSelecionado){
+function preencherCampos(indexSelecionado) {
     campoFlexGrow.val(itensFlex[indexSelecionado].css("flex-grow"));
     campoFlexShrink.val(itensFlex[indexSelecionado].css("flex-shrink"));
     campoFlexBasis.val(itensFlex[indexSelecionado].css("flex-basis"));
@@ -202,23 +202,23 @@ function preencherCampos(indexSelecionado){
     var possuiWidth = false;
     var possuiHeight = false;
 
-    for(let e of itensFlex[indexSelecionado][0].style) {
-        if(e == "width") {
+    for (let e of itensFlex[indexSelecionado][0].style) {
+        if (e == "width") {
             possuiWidth = true;
         }
-        if(e == "height") {
+        if (e == "height") {
             possuiHeight = true;
-        }        
+        }
     }
 
-    if (possuiWidth){
+    if (possuiWidth) {
         campoWidth.val(itensFlex[indexSelecionado].css("width"));
     }
 
-    if (possuiHeight){
+    if (possuiHeight) {
         campoHeight.val(itensFlex[indexSelecionado].css("height"));
     }
-    
+
     campoPadding.val(itensFlex[indexSelecionado].css("padding"));
     campoMargin.val(itensFlex[indexSelecionado].css("margin"));
 
@@ -228,7 +228,29 @@ function preencherCampos(indexSelecionado){
 }
 
 /*-------------------------------------------------------*\
-    Requisições
+    ToolTips
+\*-------------------------------------------------------*/
+
+tippy.setDefaultProps({
+    delay: 50,    
+    allowHTML: true,
+    animation: 'fade',
+    interactive: true,
+    placement: 'auto',
+    theme: 'tomato',
+    maxWidth: 600
+});
+
+tippy('.containerOption', {
+    content(reference) {
+        const id = reference.getAttribute('data-template');
+        const template = document.getElementById(id);
+        return template.innerHTML;
+    }
+});
+
+/*-------------------------------------------------------*\
+    Utilitários
 \*-------------------------------------------------------*/
 
 function oberLoremIpsum() {
@@ -244,7 +266,6 @@ function oberLoremIpsum() {
         "the 1500s",
         "when an unknown"
     ]
-    
+
     return textos[Math.floor(Math.random() * 10)]
 }
- 
