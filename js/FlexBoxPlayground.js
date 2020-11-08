@@ -31,6 +31,7 @@ var codeFlexWrap = $("#code-flex-wrap");
 
 
 //Campos do item
+var campoOrder = $("#campo-order");
 var campoFlexGrow = $("#campo-flex-grow");
 var campoFlexShrink = $("#campo-flex-shrink");
 var campoFlexBasis = $("#campo-flex-basis");
@@ -43,6 +44,10 @@ var campoMargin = $("#campo-margin");
 /*-------------------------------------------------------*\ 
     Eventos
 \*-------------------------------------------------------*/
+
+campoOrder.keyup((e) => {
+    itensFlex[indexAtual].css("order", campoOrder.val());
+});
 
 campoFlexGrow.keyup((e) => {
     itensFlex[indexAtual].css("flex-grow", campoFlexGrow.val());
