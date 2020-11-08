@@ -203,6 +203,16 @@ function trocarFormularioItem(indexSelecionado) {
 }
 
 function limparCampos() {
+    campoOrder.val("");
+    for (let e of document.getElementsByClassName("align-self")) {
+        if (e.textContent.includes(" (default)")) {
+            e.style.color = "#71c558";
+            e.style.fontWeight = "700";
+        } else {
+            e.style.color = "#212529";
+            e.style.fontWeight = "100";
+        }
+    } 
     campoFlexGrow.val(null);
     campoFlexShrink.val(null);
     campoFlexBasis.val(null);
@@ -214,6 +224,19 @@ function limparCampos() {
 }
 
 function preencherCampos(indexSelecionado) {
+
+    campoOrder.val(itensFlex[indexSelecionado].css("order"));
+
+    for (let e of document.getElementsByClassName("align-self")) {
+        if (e.textContent.replace(" (default)", "") === itensFlex[indexSelecionado].css("align-self")) {
+            e.style.color = "#71c558";
+            e.style.fontWeight = "700";
+        } else {
+            e.style.color = "#212529";
+            e.style.fontWeight = "100";
+        }
+    }   
+
     campoFlexGrow.val(itensFlex[indexSelecionado].css("flex-grow"));
     campoFlexShrink.val(itensFlex[indexSelecionado].css("flex-shrink"));
     campoFlexBasis.val(itensFlex[indexSelecionado].css("flex-basis"));
