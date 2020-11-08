@@ -176,7 +176,7 @@ function btnAlignSelf(botao) {
 function addItemFlex() {
     var opacidade = indexUltimo !== -1 ? parseInt(itensFlex[indexUltimo].css("opacity") * 100, 10) : 50;
 
-    indexUltimo++;
+    ++indexUltimo;
 
     var ipsum = oberLoremIpsum()
 
@@ -195,8 +195,7 @@ function addItemFlex() {
 
         `</div>`).appendTo(containerFlex));
 
-    indexAtual = indexUltimo;
-    trocarFormularioItem(indexAtual)
+    trocarFormularioItem(indexUltimo)
 
 }
 
@@ -208,7 +207,8 @@ function removeUltimoItemFlex() {
         }
 
         $(`#botaoItem${indexUltimo}`).remove();
-        $(`[id-flex="${indexUltimo}"]`).remove();
+        itensFlex[indexUltimo].remove();
+        itensFlex.splice(indexUltimo);
 
         indexUltimo--;
     }
@@ -220,7 +220,7 @@ function trocarFormularioItem(indexSelecionado) {
     $(`[id^="botaoItem"]`).removeClass("active");
     $(`#botaoItem${indexAtual}`).addClass("active");            
     limparCampos();
-    preencherCampos(indexSelecionado);
+    preencherCampos(indexAtual);
 }
 
 function limparCampos() {
